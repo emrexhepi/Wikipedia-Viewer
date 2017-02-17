@@ -20,4 +20,4 @@ And you are ready to go.
 
 A live version of this mini web app you can find on my codepend profile.
 
-link: https://codepen.io/freeCodeCamp/full/Myvqmo
+link: https://codepen.io/emrexhepi/full/ygWeLB
