@@ -39,9 +39,7 @@ class App extends React.Component<undefined, AppState> {
         });
 
         let api = 'https://en.wikipedia.org/w/api.php?action=opensearch&limit=15&namespace=0&format=json&search=';
-        //let api = "https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=";
         api += query;
-        //api += "&callback=JSON_CALLBACK";
 
         $.ajax({
             type: "GET",
@@ -54,14 +52,9 @@ class App extends React.Component<undefined, AppState> {
                 list.items = [];
                 list.show = true;
 
-                console.log(data);
-
                 for(var i = 0; i < data[1].length; i++) {
-                    console.log(data[1][i]);
-                    let title = data[1][i].length > 25 ? data[1][i].substring(0, 24)+"..." : data[1][i];
-                    //let desctiption = data[2][i].length > 40 ? data[2][i].substring(0, 39)+"..." : data[2][i];
                     list.items[i] = {
-                        title : title,
+                        title : data[1][i],
                         description: data[2][i],
                         url: data[3][i]
                     };
