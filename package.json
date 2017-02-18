@@ -1,10 +1,11 @@
 {
   "name": "wikipedia-viewer",
-  "version": "0.0.1-beta",
+  "version": "1.0.0",
   "description": "A wikipedia viewer writen in typescript and reactjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --watch | lite-server",
+    "start": "npm run dev"
   },
   "keywords": [
     "reactjs",
@@ -14,12 +15,12 @@
   "author": "emrexhepi",
   "license": "ISC",
   "dependencies": {
-    "@types/react": "^15.0.9",
-    "@types/react-dom": "^0.14.23",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
   "devDependencies": {
+    "@types/react": "^15.0.9",
+    "@types/react-dom": "^0.14.23",
     "@types/jquery": "^2.0.40",
     "awesome-typescript-loader": "^3.0.4-rc.2",
     "css-loader": "^0.26.1",

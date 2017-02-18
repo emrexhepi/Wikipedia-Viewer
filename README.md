@@ -14,11 +14,10 @@ The purpose of this mini project was to learn and bring together all the technol
 ### How to run
 1. install node.js and npm
 2. pull the project to a folder
-3. run "npm install"
-4. run "webpack"
-5. optional: if you want webpack to build after every file change run "webpack --watch"
+3. from cmd/terminal run "npm install"
+4. run "npm start"
 
-And you are ready to go.
+And you are good to go with a live developement enviroment.
 
 A live version of this mini web app you can find on my codepend profile.
 
