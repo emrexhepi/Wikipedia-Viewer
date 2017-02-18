@@ -15,6 +15,8 @@ The purpose of this mini project was to learn and bring together all the technol
 1. install node.js and npm
 2. pull the project to a folder
 3. run "npm install"
+4. run "webpack"
+5. optional: if you want webpack to build after every file change run "webpack --watch"
 
 And you are ready to go.
 
