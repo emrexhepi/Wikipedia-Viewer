@@ -77,7 +77,7 @@ class App extends React.Component<undefined, AppState> {
             error: (errMessage)=> {
                  this.setState({
                      wikiList: {show: false, items : []},
-                     message: "Server Error!! Please try again later!"
+                     message: "Server/Connection Error!! Please try again later!"
                  });
             }
         });
