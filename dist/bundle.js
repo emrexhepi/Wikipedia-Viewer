@@ -566,7 +566,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, ".list-item {\n  display: flex;\n  flex: 1;\n  background-color: white;\n  margin: 0.5em;\n  padding: 0.3em;\n  border-radius: 5px;\n  text-decoration: none;\n  color: #071321;\n  opacity: 0.8;\n  transition: all 0.3s cubic-bezier(0, 0.1, 0.03, 1.5);\n  box-shadow: 0px 0px 6px #000; }\n  .list-item li {\n    width: 100%;\n    height: 75px;\n    margin-left: 0.8em;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around; }\n    .list-item li .title {\n      flex: 1;\n      display: flex;\n      align-items: flex-end; }\n      .list-item li .title h2 {\n        font-size: 1.4em; }\n    .list-item li .description {\n      flex: 1;\n      display: flex;\n      align-items: flex-start;\n      width: 94%;\n      min-width: 0;\n      color: #071321; }\n      .list-item li .description p {\n        font-size: 1.2em;\n        white-space: nowrap;\n        overflow: hidden;\n        text-overflow: ellipsis; }\n\n.list-item:hover {\n  opacity: 1;\n  transform: scale(1.03);\n  box-shadow: 0px 0px 15px #000;\n  transition: all 0.3s cubic-bezier(0, 0.3, 1.2, 1.5); }\n", ""]);
+exports.push([module.i, ".list-item {\n  display: flex;\n  flex: 1;\n  background-color: white;\n  margin: 0.5em;\n  padding: 0.3em;\n  border-radius: 5px;\n  text-decoration: none;\n  color: #071321;\n  opacity: 0.8;\n  transition: all 0.3s cubic-bezier(0, 0.1, 0.03, 1.5);\n  box-shadow: 0px 0px 6px #000; }\n  .list-item li {\n    width: 100%;\n    height: 75px;\n    margin-left: 0.8em;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around; }\n    .list-item li .title {\n      flex: 1;\n      display: flex;\n      width: 94%;\n      align-items: flex-end;\n      min-width: 0; }\n      .list-item li .title h2 {\n        font-size: 1.4em;\n        white-space: nowrap;\n        overflow: hidden;\n        text-overflow: ellipsis; }\n    .list-item li .description {\n      flex: 1;\n      display: flex;\n      align-items: flex-start;\n      width: 94%;\n      min-width: 0; }\n      .list-item li .description p {\n        font-size: 1.2em;\n        white-space: nowrap;\n        overflow: hidden;\n        text-overflow: ellipsis; }\n\n.list-item:hover {\n  opacity: 1;\n  transform: scale(1.03);\n  box-shadow: 0px 0px 15px #000;\n  transition: all 0.3s cubic-bezier(0, 0.3, 1.2, 1.5); }\n", ""]);
 
 // exports
 
@@ -730,9 +730,7 @@ var App = (function (_super) {
             message: "Searching..."
         });
         var api = 'https://en.wikipedia.org/w/api.php?action=opensearch&limit=15&namespace=0&format=json&search=';
-        //let api = "https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=";
         api += query;
-        //api += "&callback=JSON_CALLBACK";
         $.ajax({
             type: "GET",
             url: api,
@@ -743,13 +741,9 @@ var App = (function (_super) {
                 var list = _this.state.wikiList;
                 list.items = [];
                 list.show = true;
-                console.log(data);
                 for (var i = 0; i < data[1].length; i++) {
-                    console.log(data[1][i]);
-                    var title = data[1][i].length > 25 ? data[1][i].substring(0, 24) + "..." : data[1][i];
-                    //let desctiption = data[2][i].length > 40 ? data[2][i].substring(0, 39)+"..." : data[2][i];
                     list.items[i] = {
-                        title: title,
+                        title: data[1][i],
                         description: data[2][i],
                         url: data[3][i]
                     };

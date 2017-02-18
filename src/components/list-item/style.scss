@@ -21,9 +21,14 @@
         .title {
             flex: 1;
             display: flex;
+            width : 94%;
             align-items: flex-end;
+            min-width: 0;
             h2 {
                 font-size: 1.4em;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
 
@@ -33,7 +38,6 @@
             align-items: flex-start;
             width : 94%;
             min-width: 0;
-            color: #071321;
             p {
                 font-size: 1.2em;
                 white-space: nowrap;
